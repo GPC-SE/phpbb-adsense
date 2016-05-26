@@ -1,0 +1,27 @@
+{
+	"name": "gpc/adsense",
+	"type": "phpbb-extension",
+	"description": "Puts AdSense after the 2nd post of a topic.",
+	"homepage": "http://www.penspinning.de",
+	"version": "1.0.0",
+	"time": "2016-05-22",
+	"keywords": ["phpbb", "extension", "gpc", "adsense"],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Robert Heim",
+			"homepage": "http://blog.robert-heim.de",
+			"email": "robert@robert-heim.de",
+			"role": "Lead Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "GPC AdSense",
+		"soft-require": {
+			"phpbb/phpbb": "3.2.*"
+		}
+	}
+}

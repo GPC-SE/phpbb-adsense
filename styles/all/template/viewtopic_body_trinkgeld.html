@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de" ng-app="main">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf8" />
+<title>GPC - Finanzierung - German Penspinning Community</title>
+
+<link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<script data-require="angular.js@1.3.0-beta.5" data-semver="1.3.0-beta.5" src="https://code.angularjs.org/1.3.0-beta.5/angular.js"></script>
+<script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script data-require="bootstrap@3.1.1" data-semver="3.1.1" src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<script>
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+var main = angular.module('main', []).
+	controller('PsCtrl', PsCtrl);
+function PsCtrl ($scope) {
+	$scope.trinkgeldMessage = "";
+	$scope.trinkgeld = 4;
+	var urlVars = getUrlVars();
+	if ("nickname" in urlVars) {
+		$scope.geberName = urlVars["nickname"];
+	} else {
+		$scope.geberName = "";
+	}
+	$scope.updateTrinkgeldMsg = function () {
+		if ($scope.geberName=="") {
+			$scope.trinkgeldMessage="Anonymes Trinkgeld";
+		} else {
+			$scope.trinkgeldMessage="Trinkgeld von " + $scope.geberName;
+		}
+	};
+	$scope.updateTrinkgeld = function () {
+		if ($scope.trinkgeld<1) {
+			$scope.trinkgeld=1;
+		}
+	};
+	$scope.updateTrinkgeldMsg();
+};
+</script>
+
+
+<style type="text/css">
+          html, body {
+            font-family:Verdana, Arial, Helvetica, sans-serif;
+            font-size:12px;
+            margin:0px;
+            border:0px;
+            background-color:#F4E7C5;
+           color:#000;
+
+          }
+          body {
+              background-color:#F4E7C5;
+              color:#000;
+          }
+          h1 {
+            margin:0px;
+            padding:0px;
+            border:0px;
+            font-size:21px;
+          }
+          h4 {
+            margin-top:4px;
+            margin-bottom:0px;
+            padding:0px;
+            border:0px;
+            font-size:14px;
+          }
+          #page {
+            position:relative;
+            top:0;
+            left:50%;
+            margin-left:-297px;
+            width:612px;
+			background-color:#FDF0CC;
+          }
+          #header {
+            width:612px;
+            height:114px;
+          }
+          #head_top {
+            height:15px;
+            width:612px;
+            background:#6E0F0F;
+            font-size:11px;
+            text-align:right;
+            color:#DDCAAE;
+          }
+          #head_logo {
+            height:75px;
+            width:612px;
+/*            background-image:url(tpl/pen3/images/head.gif);*/
+          }
+          #head_menu {
+            height:24px;
+            width:612px;
+            background:#6E0F0F;
+          }
+          #ads_head {
+            margin-left: 50px;
+            margin-top: 5px;
+          }
+          #page_body{
+
+/*background-image:url(http://www.penspinning.de/tpl/pen3/images/bg.gif); */ }
+          #left{
+            width:167px;
+            float:left;
+/*            word-wrap:break-word;*/
+          }
+          #content{
+            background-color:#FDF0CC;
+		width:525px;
+		margin-top:10px;
+		margin-left: auto ;
+		margin-right: auto ;
+		margin-bottom: 10px ;
+	  }
+          img {
+              border-color:#6E0F0F;
+          }
+          #footer {
+            width:612px;
+            height:62px;
+            background-color:#6E0F0F;
+            color:#DDCAAE;
+            text-align:center;
+            line-height:1.7;
+            padding-top:5px;
+          }
+          #footer a:link, #footer a:visited { color:#DDCAAE; text-decoration:underline;}
+          #footer a:hover, #footer a:active { color:#FDF0CC;}
+          .submenucontainer{
+            background-color:#DDCAAE;
+            width:152px;
+            margin:7px 7px 0px 7px;
+            border-right:1px solid #9B937D; border-bottom:1px solid #9B937D;
+            font-size:10px;
+          }
+          .submenutitle{
+            display:block;
+            width:140px;
+            height:14px;
+            padding:6px;
+            margin-bottom:2px;
+            color:#DDCAAE;
+            background-color:#6E0F0F;
+            font-size:12px;
+          }
+          .submenusubtitle{
+            display:block;
+            font-weight:bold;
+          }
+          .menu {
+            line-height:2;
+            padding:0px;
+            color:#FFFFFF;
+          }
+          .menu a{
+            padding-left:7px;
+            padding-right:7px;
+          }
+          .menu a:link, .menu a:visited{ color:#FFFFFF; text-decoration:none; }
+          .menu a:hover, .menu a:active{ color:#DDCAAE; text-decoration:none; }
+          .pfad{
+            font-size:10px;
+            color:#8B8170;
+            padding:6px;
+            padding-left:0px;
+          }
+          .pfad a:link, .pfad a:visited { color:#8B8170; text-decoration:none; }
+          .pfad a:hover, .pfad a:active { color:#8B8170; text-decoration:underline; }
+
+          a.submenu:link, a.submenu:visited {
+            display:block;
+            background-color:#DDCAAE;
+            color:#000000;
+            text-decoration:none;
+            padding-left:3px;
+            padding-top:3px;
+            padding-bottom:2px;
+            font-size:12px;
+          }
+          a.submenu:hover, a.submenu:active {
+            display:block;
+            background-color:#DDCAAE;
+            color:#6E0F0F;
+            text-decoration:underline;
+            padding-left:3px;
+            font-size:12px;
+          }
+          a.submenusubtitle:link, a.submenusubtitle:visited {
+            display:block;
+            background-color:#DDCAAE;
+            color:#000000;
+            text-decoration:none;
+            font-size:12px;
+            padding-top:3px; padding-bottom:3px;
+          }
+          a.submenusubtitle:hover, a.submenusubtitle:active {
+            display:block;
+            background-color:#DDCAAE;
+            color:#6E0F0F;
+            text-decoration:underline;
+            font-size:12px;
+            padding-top:3px; padding-bottom:3px;
+          }
+          p.submenu {
+            margin:0px;
+            padding-left:5px;
+            padding-bottom:5px;
+          }
+
+a:link, a:visited { color:#6E0F0F; text-decoration:none; }
+          a:hover, a:active { color:#6E0F0F; text-decoration:underline; }
+
+
+
+</style>
+
+</head>
+
+<body>
+<p style="text-align:justify; margin:4px 4px 0 4px">
+
+Um die <a target="_blank" href="http://www.penspinning.de/server_finanzierung.php">Serverkosten</a> zu decken, sind wir auf Werbung und Trinkgelder angewiesen. &Uuml;ber den Button kannst Du uns ein Trinkgeld zukommen lassen, dessen Verwendung <a target="_blank" href="http://www.penspinning.de/server_finanzierung.php">hier</a> dokumentiert wird. Alternativ kannst Du Deinen AdBlocker f&uuml;r diese Website ausschalten. Vielen Dank f&uuml;r die Unterst&uuml;tzung!
+
+</p>
+
+<div id="psadsalternative" ng-controller="PsCtrl" style="margin-top:10px; width:260px;margin:auto">
+<form>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon" style="min-width:40px">♟</div>
+			<input class="form-control" type="text" ng-model="geberName" ng-change="updateTrinkgeldMsg()" placeholder="Name oder Nickname">
+		</div>
+
+		<div class="input-group">
+			<div class="input-group-addon" style="min-width:40px">€</div>
+			<input class="form-control"  type="number" ng-change="updateTrinkgeld()" ng-model="trinkgeld" placeholder="Dein Trinkgeld">
+		</div>
+	</div>
+</form>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="robert@penspinning.de">
+<input type="hidden" name="lc" value="DE">
+<input type="hidden" name="item_name" value="{{trinkgeldMessage}}">
+<input type="hidden" name="no_note" value="0">
+<input type="hidden" name="cn" value="Message">
+<input type="hidden" name="no_shipping" value="1">
+<input type="hidden" name="rm" value="1">
+<input type="hidden" name="return" value="http://penspinning.de">
+<input type="hidden" name="cancel_return" value="http://penspinning.de">
+<input type="hidden" name="currency_code" value="EUR">
+<input type="hidden" name="amount" value="{{trinkgeld}}">
+
+<button style="background-color: #51a351; color:white" class="btn btn-success">⇒ {{trinkgeld}} € {{trinkgeldMessage}} geben</button>
+</form>
+</div>
+
+</body>
+</html>
