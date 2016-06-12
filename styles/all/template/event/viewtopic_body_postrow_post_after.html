@@ -1,55 +1,69 @@
 <!-- IF postrow.S_FIRST_ROW == 2 -->
-
-
-<div class="post bg2">
-		<div class="inner">
-		<div class="postbody">
-						<div id="post_content4">
-
-			<div class="content">
-			<div align="center">
-			<div id="psads">
-				<script type="text/javascript"><!--
-					google_ad_client = "pub-4400528632078039";
-					google_ad_slot = "8382421715";
-					google_ad_width = 728;
-					google_ad_height = 90;
-				//-->
-				</script>
-				<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-				</script>
-			</div>
-			<div id="psadsalternative" style="display:none" ng-controller="PsCtrl" style="margin-top:10px">
-				<iframe src="http://forum.penspinning.de/styles/ps/template/viewtopic_body_trinkgeld.html?nickname=Robert" style="width:100%;height:200px" scrolling="no" frameborder="0">
-				SHIT
-				</iframe>
-			</div>
-			
 <script type="text/javascript">
-function checkAdBlock() {
-	setTimeout(function(){
-		var ad = document.getElementById("psads").children;
-		if (ad.length <= 2)  {
-			document.getElementById("psadsalternative").style.display="block";
-		};
-	}, 1000);
-}
-checkAdBlock();
+	function adBlockFunction() {
+		setTimeout(function() {
+			$("#psadsalternative").css('opacity', 0).slideDown('slow').animate(
+					{
+						opacity : 1
+					}, {
+						queue : false,
+						duration : 1500
+					});
+		}, 1000);
+	}
 </script>
-		</div>
-		</div>
-
+<div class="post bg2">
+	<div class="inner">
+		<div class="content">
+			<div id="psads">
+				<script async
+					src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+					onerror="adBlockFunction();"></script>
+				<!-- gpc5 -->
+				<ins class="adsbygoogle" style="display: block"
+					data-ad-client="ca-pub-4400528632078039" data-ad-slot="4691248703"
+					data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
 			</div>
-
-		</div>
-
-				<div class="back2top">
-						<a href="#top" class="top" title="Top">
-				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
-				<span class="sr-only">Top</span>
-			</a>
+			<!-- IF S_WERBUNG_ALTERNATIVE -->
+			<div id="psadsalternative" style="display: none;">
+				<div class="psadsalternative" style="font-size:13pt">
+					<p>Schalte deinen Werbeblocker für diese Website aus oder gib uns ein Trinkgeld, um 
+						die Serverkosten zu decken. <a target="_blank" href="/server_costs">&rArr; Mehr Informationen</a>
+					</p>
+					<div align="center">
+						<div style="margin-top: 5px">
+							<form action="https://www.paypal.com/cgi-bin/webscr"
+								method="post" target="_top">
+								<input type="hidden" name="cmd" value="_xclick"> <input
+									type="hidden" name="business" value="robert@penspinning.de">
+								<input type="hidden" name="lc" value="DE"> <input
+									type="hidden" name="item_name"
+									value="Trinkgeld von {S_USERNAME}"> <input
+									type="hidden" name="no_note" value="0"> <input
+									type="hidden" name="cn" value="Message"> <input
+									type="hidden" name="no_shipping" value="1"> <input
+									type="hidden" name="rm" value="1"> <input type="hidden"
+									name="return" value="http://penspinning.de"> <input
+									type="hidden" name="cancel_return"
+									value="http://penspinning.de"> <input type="hidden"
+									name="currency_code" value="EUR">
+								<div class="button button-icon-only" padding="2px">
+									<i style="padding-right: 10px; font-size:15pt; color:grey;">€</i> <input
+										style="padding: 0 4px; margin-bottom:4px; font-size:15pt;" name="amount" class="inputbox "
+										type="number" min="1" value="5" placeholder="Dein Trinkgeld">
+								</div>
+								<input type="submit" value="Trinkgeld geben"
+									class="button1 default-submit-action">
+							</form>
+						</div>
 					</div>
-		
+				</div>
+			</div>
+			<!-- ENDIF -->
 		</div>
+	</div>
 </div>
 <!-- ENDIF -->
