@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "Puts AdSense after the 2nd post of a topic.",
 	"homepage": "http://www.penspinning.de",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"time": "2016-05-22",
 	"keywords": ["phpbb", "extension", "gpc", "adsense"],
 	"license": "GPL-2.0",
@@ -21,7 +21,7 @@
 	"extra": {
 		"display-name": "GPC AdSense",
 		"soft-require": {
-			"phpbb/phpbb": "3.2.*"
+			"phpbb/phpbb": "3.3.*"
 		}
 	}
 }
